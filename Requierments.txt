@@ -1,0 +1,3 @@
+pip install Open CV
+pip install mediapipe
+
