@@ -60,3 +60,5 @@ with mp_holistic.Holistic(
         cv2.imshow('MediaPipe Holistic', cv2.flip(image, 1))
         if cv2.waitKey(5) & 0xFF == 27:
             break
+        
+cap.release()
