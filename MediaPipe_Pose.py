@@ -22,3 +22,8 @@ with mp_pose.Pose(
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     results = pose.process(image)
     
+    for index, landmark in enumerate(results.pose_landmarks.landmark):
+      # val = results.pose_landmarks;
+      # num = len(results.pose_landmarks.landmark);
+      print("index : " + str(index) + " x: "+ str(landmark.x) + " y: "+ str(landmark.y) + " z: "+ str(landmark.z));
+    # print(val)
