@@ -31,3 +31,12 @@ with mp_pose.Pose(
       # num = len(results.pose_landmarks.landmark);
       print("index : " + str(index) + " x: "+ str(landmark.x) + " y: "+ str(landmark.y) + " z: "+ str(landmark.z));
     # print(val)
+
+    # Draw the pose annotation on the image.
+    image.flags.writeable = True
+    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    mp_drawing.draw_landmarks(image,results.pose_landmarks,mp_pose.POSE_CONNECTIONS,landmark_drawing_spec=mp_drawing_styles.get_default_pose_landmarks_style())
+    # Flip the image horizontally for a selfie-view display.
+    cv2.imshow('MediaPipe Pose', cv2.flip(image, 1))
+    if cv2.waitKey(5) & 0xFF == 27:
+      break
