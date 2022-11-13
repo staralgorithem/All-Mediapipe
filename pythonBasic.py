@@ -25,3 +25,6 @@ with handsModule.Hands(static_image_mode=False, min_detection_confidence=0.7, mi
  
         if cv2.waitKey(1) == 27:
             break
+ 
+cv2.destroyAllWindows()
+capture.release()
