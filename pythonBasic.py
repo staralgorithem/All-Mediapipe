@@ -21,3 +21,4 @@ with handsModule.Hands(static_image_mode=False, min_detection_confidence=0.7, mi
             for handLandmarks in results.multi_hand_landmarks:
                 drawingModule.draw_landmarks(frame, handLandmarks, handsModule.HAND_CONNECTIONS)
  
+        cv2.imshow('Test hand', frame)
