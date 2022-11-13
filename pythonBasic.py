@@ -22,3 +22,6 @@ with handsModule.Hands(static_image_mode=False, min_detection_confidence=0.7, mi
                 drawingModule.draw_landmarks(frame, handLandmarks, handsModule.HAND_CONNECTIONS)
  
         cv2.imshow('Test hand', frame)
+ 
+        if cv2.waitKey(1) == 27:
+            break
