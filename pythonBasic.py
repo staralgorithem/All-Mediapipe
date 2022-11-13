@@ -17,3 +17,7 @@ with handsModule.Hands(static_image_mode=False, min_detection_confidence=0.7, mi
         ret, frame = capture.read()
         results = hands.process(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
  
+        if results.multi_hand_landmarks != None:
+            for handLandmarks in results.multi_hand_landmarks:
+                drawingModule.draw_landmarks(frame, handLandmarks, handsModule.HAND_CONNECTIONS)
+ 
